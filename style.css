@@ -1,8 +1,8 @@
-/* Reset básico para centralizar tudo na tela */
+/* Centralização e Reset */
 body {
-  background-color: #121212;
-  color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0f172a; /* Azul muito escuro */
+  color: #f8fafc;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,68 +10,112 @@ body {
   margin: 0;
 }
 
+/* Card Principal */
 .container {
-  background-color: #1e1e1e;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  background-color: #1e293b;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 400px;
   text-align: center;
-  width: 350px;
 }
 
 h1 {
-  font-size: 1.5rem;
-  margin-bottom: 1.5rem;
-  color: #00adb5;
+  margin-top: 0;
+  font-size: 1.75rem;
+  color: #38bdf8;
 }
 
-.button-group {
+/* Estilização do Checkbox e Labels */
+.config-row {
   display: flex;
-  gap: 10px;
+  align-items: center;
   justify-content: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+input[type="checkbox"] {
+  accent-color: #38bdf8;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+/* Campo de Input Numérico */
+.input-container {
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+input[type="number"] {
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  width: 60px;
+  outline: none;
+}
+
+/* Botões */
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
   margin-bottom: 1.5rem;
 }
 
 button {
-  padding: 10px 20px;
-  cursor: pointer;
+  padding: 12px;
   border: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s, background-color 0.2s;
 }
 
-/* Botão Gerar */
-button:first-of-type {
-  background-color: #00adb5;
-  color: white;
+button:active {
+  transform: scale(0.98);
 }
 
-button:first-of-type:hover {
-  background-color: #008c92;
+/* Botão Gerar (Destaque) */
+button:nth-of-type(1) {
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+button:nth-of-type(1):hover {
+  background-color: #7dd3fc;
 }
 
 /* Botão Copiar */
-button:last-of-type {
-  background-color: #393e46;
-  color: #eeeeee;
-  border: 1px solid #4e545c;
+button:nth-of-type(2) {
+  background-color: #334155;
+  color: #f8fafc;
 }
 
-button:last-of-type:hover {
-  background-color: #4e545c;
+button:nth-of-type(2):hover {
+  background-color: #475569;
 }
 
-/* Área da Senha */
-.password-box {
-  background-color: #252a34;
-  padding: 15px;
+/* Resultado da Senha */
+.result {
+  background-color: #0f172a;
+  padding: 1rem;
   border-radius: 8px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1.2rem;
-  color: #00ff41; /* Verde estilo terminal */
+  border: 1px solid #334155;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  color: #2dd4bf;
   word-break: break-all;
-  min-height: 24px;
-  border: 1px dashed #4e545c;
-  text-align: center;
+  min-height: 1.5rem;
+}
+
+/* Animação suave para o input aparecer */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
 }
