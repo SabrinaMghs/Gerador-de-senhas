@@ -1,8 +1,15 @@
-/* Centralização e Reset */
+:root {
+  --primary: #6366f1;
+  --bg-dark: #0f172a;
+  --card-bg: rgba(30, 41, 59, 0.7);
+  --text-main: #f8fafc;
+  --accent: #22d3ee;
+}
+
 body {
-  background-color: #0f172a; /* Azul muito escuro */
-  color: #f8fafc;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: radial-gradient(circle at top left, #1e293b, #0f172a);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,112 +17,94 @@ body {
   margin: 0;
 }
 
-/* Card Principal */
 .container {
-  background-color: #1e293b;
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
   width: 100%;
-  max-width: 400px;
+  max-width: 420px;
   text-align: center;
 }
 
 h1 {
-  margin-top: 0;
-  font-size: 1.75rem;
-  color: #38bdf8;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(to right, #818cf8, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-/* Estilização do Checkbox e Labels */
-.config-row {
+.options-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.checkbox-label {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 1rem;
-  font-size: 0.9rem;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
   color: #94a3b8;
 }
 
-input[type="checkbox"] {
-  accent-color: #38bdf8;
-  cursor: pointer;
-  width: 16px;
-  height: 16px;
-}
-
-/* Campo de Input Numérico */
-.input-container {
-  margin-bottom: 1.5rem;
-  animation: fadeIn 0.3s ease-out;
-}
-
-input[type="number"] {
-  background: #0f172a;
-  border: 1px solid #334155;
-  color: white;
-  padding: 8px;
-  border-radius: 6px;
-  width: 60px;
-  outline: none;
-}
-
-/* Botões */
-.actions {
+/* Container dos botões em Grid */
+.button-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: 1fr;
+  gap: 10px;
   margin-bottom: 1.5rem;
+}
+
+@media (min-width: 400px) {
+  .button-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .btn-generate { grid-column: span 2; }
 }
 
 button {
   padding: 12px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.1s, background-color 0.2s;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
 }
 
-button:active {
-  transform: scale(0.98);
+.btn-generate {
+  background-color: var(--primary);
+  color: white;
 }
 
-/* Botão Gerar (Destaque) */
-button:nth-of-type(1) {
-  background-color: #38bdf8;
-  color: #0f172a;
-}
+.btn-generate:hover { background-color: #4f46e5; }
 
-button:nth-of-type(1):hover {
-  background-color: #7dd3fc;
-}
-
-/* Botão Copiar */
-button:nth-of-type(2) {
+.btn-secondary {
   background-color: #334155;
-  color: #f8fafc;
+  color: #cbd5e1;
 }
 
-button:nth-of-type(2):hover {
-  background-color: #475569;
-}
+.btn-secondary:hover { background-color: #475569; }
 
-/* Resultado da Senha */
-.result {
-  background-color: #0f172a;
-  padding: 1rem;
-  border-radius: 8px;
-  border: 1px solid #334155;
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  color: #2dd4bf;
-  word-break: break-all;
+/* Display da Senha */
+.password-display {
+  background: rgba(15, 23, 42, 0.6);
+  padding: 1.2rem;
+  border-radius: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+  color: var(--accent);
+  border: 1px solid rgba(34, 211, 238, 0.2);
   min-height: 1.5rem;
-}
-
-/* Animação suave para o input aparecer */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-5px); }
-  to { opacity: 1; transform: translateY(0); }
+  word-break: break-all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
