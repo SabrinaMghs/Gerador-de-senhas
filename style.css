@@ -1,0 +1,77 @@
+/* Reset básico para centralizar tudo na tela */
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  width: 350px;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #00adb5;
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+/* Botão Gerar */
+button:first-of-type {
+  background-color: #00adb5;
+  color: white;
+}
+
+button:first-of-type:hover {
+  background-color: #008c92;
+}
+
+/* Botão Copiar */
+button:last-of-type {
+  background-color: #393e46;
+  color: #eeeeee;
+  border: 1px solid #4e545c;
+}
+
+button:last-of-type:hover {
+  background-color: #4e545c;
+}
+
+/* Área da Senha */
+.password-box {
+  background-color: #252a34;
+  padding: 15px;
+  border-radius: 8px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  color: #00ff41; /* Verde estilo terminal */
+  word-break: break-all;
+  min-height: 24px;
+  border: 1px dashed #4e545c;
+  text-align: center;
+}
